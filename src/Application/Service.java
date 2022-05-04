@@ -1,6 +1,8 @@
 package Application;
 
 import Components.*;
+
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class Service {
@@ -93,5 +95,27 @@ public class Service {
         return numberOfOrders;
     }
 
-//    5.
+//    5. Delete from the list the orders older than 24h
+    public void deleteOrders(){
+        for(var order : orders){
+            if(order.getTimeOfOrder().plusHours(24).compareTo(LocalDateTime.now()) < 0){
+                    orders.remove(order);
+            }
+        }
+    }
+
+//    6. For the order by a given client, compute the estimated arrival time
+    public LocalDateTime arrivalTime(Client client){
+        LocalDateTime arrival = LocalDateTime.now();
+
+        for(var order : orders){
+            if(order.getClient().getId().equals(client.getId())){
+                    arrival = order.getTimeOfOrder().plusMinutes(order.getRestaurant().getWaitingTime());
+            }
+        }
+
+        return arrival;
+    }
+
+//    7.
 }

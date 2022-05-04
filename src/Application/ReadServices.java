@@ -70,7 +70,7 @@ public class ReadServices {
         Scanner in = new Scanner(System.in);
 
         String username, emailAddress, phoneNumber, typeOfCuisine;
-        Integer waitingTime;
+        Long waitingTime;
 
         System.out.println("Username: ");
         username = in.nextLine();
@@ -81,7 +81,7 @@ public class ReadServices {
         System.out.println("Type of cuisine served: ");
         typeOfCuisine = in.nextLine();
         System.out.println("Average waiting time: ");
-        waitingTime = in.nextInt();
+        waitingTime = in.nextLong();
 
         return new Restaurant(username, emailAddress, readAddress(in), phoneNumber, typeOfCuisine, waitingTime);
     }

@@ -3,9 +3,9 @@ package Components;
 public class Restaurant extends User{
     private Address restaurantAddress;
     private String phoneNumber, typeOfCuisine;
-    private Integer waitingTime;
+    private Long waitingTime;
 
-    public Restaurant(String username, String emailAdress, Address restaurantAddress, String phoneNumber, String typeOfCuisine, Integer waitingTime) {
+    public Restaurant(String username, String emailAdress, Address restaurantAddress, String phoneNumber, String typeOfCuisine, Long waitingTime) {
         super(username, emailAdress);
         this.restaurantAddress = restaurantAddress;
         this.phoneNumber = phoneNumber;
@@ -37,11 +37,11 @@ public class Restaurant extends User{
         this.typeOfCuisine = typeOfCuisine;
     }
 
-    public Integer getWaitingTime() {
+    public Long getWaitingTime() {
         return waitingTime;
     }
 
-    public void setWaitingTime(Integer waitingTime) {
+    public void setWaitingTime(Long waitingTime) {
         this.waitingTime = waitingTime;
     }
 
