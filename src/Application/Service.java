@@ -13,6 +13,37 @@ public class Service {
 
     private final ReadServices readServices = new ReadServices();
 
+    private static Service servicesInstance = null;
+
+    public static Service getInstance() {
+        if (servicesInstance == null)
+            servicesInstance = new Service();
+        return servicesInstance;
+    }
+
+    public final void showMenu() {
+        System.out.println("# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #");
+        System.out.println("# # # # #   Welcome!   # # # # #");
+        System.out.println("# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #");
+        System.out.println("    Here are the options: ");
+        System.out.println("1. Add a client to the app.");
+        System.out.println("2. Add an courier to the app.");
+        System.out.println("3. Add a dish.");
+        System.out.println("4. Add a restaurant for the app.");
+        System.out.println("5. Show client list of the app.");
+        System.out.println("6. Show courier list of the app.");
+        System.out.println("7. Show restaurants of the app.");
+        System.out.println("8. Show orders made in the app.");
+        System.out.println("9. Show salary of a courier.");
+        System.out.println("10. Show the price of an order.");
+        System.out.println("11. Show credit of a client.");
+        System.out.println("12. Show how many orders were given from restaurants with a turkish specific.");
+        System.out.println("13. Delete the orders older than 24h.");
+        System.out.println("14. Show estimated arrival time for the order of a given client.");
+        System.out.println("15. EXIT");
+        System.out.println(" - Introduce the option number: ");
+    }
+
     public void addClient(Client client){
         clients.add(client);
     }
@@ -117,5 +148,4 @@ public class Service {
         return arrival;
     }
 
-//    7.
 }
