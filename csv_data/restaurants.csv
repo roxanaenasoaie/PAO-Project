@@ -1,0 +1,6 @@
+username,emailAddress,street,city,county,country,buildingID,streetNumber,floorNumber,apartmentNumber,phoneNumber,cuisine,waitingTime
+kfc,kfc@kfc.ro,Regina Elisabeta,Bucuresti,Bucuresti,Romania,A,45,0,1,+40233475812,fastfood,30
+mcdonalds,mc@mcdonalds.ro,Regina Elisabeta,Bucuresti,Bucuresti,Romania,B,45,0,1,+40232412000,fastfood,25
+toans,toans@toans.ro,Zorelelor,Bucuresti,Bucuresti,Romania,A,2,5,22,+40234567812,vietnamese,60
+alibaba,alibaba@alibaba.ro,Magheru,Bucuresti,Bucuresti,Romania,ZE,10,9,80,turkish,50
+sofra,sofra@sofra.ro,IC Bratianu,Bucuresti,Bucuresti,Romania,H4,3,3,42,turkish,70

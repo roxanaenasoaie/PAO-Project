@@ -11,6 +11,8 @@ public class Dish extends Identity{
 
     public Dish(String dishName, Float dishWeight, Float dishPrice, List<String> ingredients) {
         super(ID);
+        ID += 1;
+
         this.dishName = dishName;
         this.dishWeight = dishWeight;
         this.dishPrice = dishPrice;
