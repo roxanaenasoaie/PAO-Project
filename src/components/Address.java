@@ -1,10 +1,16 @@
-package Components;
+package components;
 
 public class Address {
+    private Integer addressID = 0;
     private String street, city, county, country, buildingID;
     private Integer streetNumber, floorNumber, apartmentNumber;
 
-    public Address(String street, String city, String county, String country, String buildingID, Integer streetNumber, Integer floorNumber, Integer apartmentNumber) {
+    public Address() {
+
+    }
+
+    public Address(Integer id, String street, String city, String county, String country, String buildingID, Integer streetNumber, Integer floorNumber, Integer apartmentNumber) {
+        this.addressID = id;
         this.street = street;
         this.city = city;
         this.county = county;
@@ -13,6 +19,14 @@ public class Address {
         this.streetNumber = streetNumber;
         this.floorNumber = floorNumber;
         this.apartmentNumber = apartmentNumber;
+    }
+
+    public Integer getAddressID() {
+        return addressID;
+    }
+
+    public void setAddressID(Integer addressID) {
+        this.addressID = addressID;
     }
 
     public String getStreet() {

@@ -1,24 +1,24 @@
-package Components;
+package components;
 
 public class Restaurant extends User{
-    private Address restaurantAddress;
+    private Integer restaurantAddressID;
     private String phoneNumber, typeOfCuisine;
     private Long waitingTime;
 
-    public Restaurant(String username, String emailAdress, Address restaurantAddress, String phoneNumber, String typeOfCuisine, Long waitingTime) {
+    public Restaurant(String username, String emailAdress, Integer restaurantAddress, String phoneNumber, String typeOfCuisine, Long waitingTime) {
         super(username, emailAdress);
-        this.restaurantAddress = restaurantAddress;
+        this.restaurantAddressID = restaurantAddress;
         this.phoneNumber = phoneNumber;
         this.typeOfCuisine = typeOfCuisine;
         this.waitingTime = waitingTime;
     }
 
-    public Address getRestaurantAddress() {
-        return restaurantAddress;
+    public Integer getRestaurantAddress() {
+        return restaurantAddressID;
     }
 
-    public void setRestaurantAddress(Address restaurantAddress) {
-        this.restaurantAddress = restaurantAddress;
+    public void setRestaurantAddress(Integer restaurantAddress) {
+        this.restaurantAddressID = restaurantAddress;
     }
 
     public String getPhoneNumber() {
@@ -49,7 +49,7 @@ public class Restaurant extends User{
     public String toString() {
         return "Restaurant{" +
                 "id=" + id +
-                ", restaurantAddress=" + restaurantAddress +
+                ", restaurantAddress=" + restaurantAddressID +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", typeOfCuisine='" + typeOfCuisine + '\'' +
                 ", waitingTime=" + waitingTime +

@@ -1,4 +1,4 @@
-package Components;
+package components;
 
 public abstract class User extends Identity{
     protected String username, emailAdress;

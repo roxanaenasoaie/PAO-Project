@@ -1,21 +1,21 @@
-package Components;
+package components;
 
 public class Client extends User{
-    private Address deliveryAddress;
+    private Integer deliveryAddressID;
     private String phoneNumber;
 
-    public Client(String username, String emailAdress, Address deliveryAddress, String phoneNumber) {
+    public Client(String username, String emailAdress, Integer deliveryAddress, String phoneNumber) {
         super(username, emailAdress);
-        this.deliveryAddress = deliveryAddress;
+        this.deliveryAddressID = deliveryAddress;
         this.phoneNumber = phoneNumber;
     }
 
-    public Address getDeliveryAddress() {
-        return deliveryAddress;
+    public Integer getDeliveryAddressID() {
+        return deliveryAddressID;
     }
 
-    public void setDeliveryAddress(Address deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
+    public void setDeliveryAddressID(Integer deliveryAddress) {
+        this.deliveryAddressID = deliveryAddress;
     }
 
     public String getPhoneNumber() {
@@ -29,7 +29,7 @@ public class Client extends User{
     @Override
     public String toString() {
         return "Client{" +
-                "deliveryAddress=" + deliveryAddress +
+                "deliveryAddress=" + deliveryAddressID +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", id=" + id +
                 ", username='" + username + '\'' +

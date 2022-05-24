@@ -1,16 +1,16 @@
-package Application;
+package application;
 
-import Components.*;
+import components.*;
 
-import java.time.LocalDateTime;
 import java.util.*;
-import java.time.LocalDate;
 
 public class ReadServices {
     protected Address readAddress(Scanner in){
         String street, city, county, country, buildingID;
-        Integer streetNumber, floorNumber, apartmentNumber;
+        Integer streetNumber, floorNumber, apartmentNumber, id;
 
+        System.out.println("ID: ");
+        id = in.nextInt();
         System.out.println("Street: ");
         street = in.nextLine();
         System.out.println("City: ");
@@ -28,22 +28,25 @@ public class ReadServices {
         System.out.println("Apartment: ");
         apartmentNumber = in.nextInt();
 
-        return new Address(street, city, county, country, buildingID, streetNumber, floorNumber, apartmentNumber);
+        return new Address(id, street, city, county, country, buildingID, streetNumber, floorNumber, apartmentNumber);
     }
 
     protected Client readClient(){
         Scanner in = new Scanner(System.in);
 
         String username, emailAddress, phoneNumber;
+        Integer deliveryAddressID;
 
         System.out.println("Username: ");
         username = in.nextLine();
+        System.out.println("Delivery Address ID: ");
+        deliveryAddressID = in.nextInt();
         System.out.println("Email Address: ");
         emailAddress = in.nextLine();
         System.out.println("Phone number: ");
         phoneNumber = in.nextLine();
 
-        return new Client(username, emailAddress, readAddress(in), phoneNumber);
+        return new Client(username, emailAddress, deliveryAddressID, phoneNumber);
 
     }
 
@@ -71,11 +74,14 @@ public class ReadServices {
 
         String username, emailAddress, phoneNumber, typeOfCuisine;
         Long waitingTime;
+        Integer restaurantAddressID;
 
         System.out.println("Username: ");
         username = in.nextLine();
         System.out.println("Email Address: ");
         emailAddress = in.nextLine();
+        System.out.println("Delivery Address ID: ");
+        restaurantAddressID = in.nextInt();
         System.out.println("Phone Number: ");
         phoneNumber = in.nextLine();
         System.out.println("Type of cuisine served: ");
@@ -83,7 +89,7 @@ public class ReadServices {
         System.out.println("Average waiting time: ");
         waitingTime = in.nextLong();
 
-        return new Restaurant(username, emailAddress, readAddress(in), phoneNumber, typeOfCuisine, waitingTime);
+        return new Restaurant(username, emailAddress, restaurantAddressID, phoneNumber, typeOfCuisine, waitingTime);
     }
 
     protected Dish readDish(){
@@ -116,7 +122,7 @@ public class ReadServices {
     protected Order readOrder(){
         Scanner in = new Scanner(System.in);
 
-        Map<Dish, Integer> orderedDishes = new HashMap<Dish, Integer>();
+        TreeMap<Dish, Integer> orderedDishes = new TreeMap<>();
         Integer numberOfDishes, dishPortions;
         Dish dish;
 

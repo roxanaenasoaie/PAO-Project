@@ -1,4 +1,4 @@
-package Components;
+package components;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,10 +8,10 @@ public class Order {
     private Client client;
     private Courier courier;
     private Restaurant restaurant;
-    private Map<Dish, Integer> orderedDishes;
+    private TreeMap<Dish, Integer> orderedDishes;
     private LocalDateTime timeOfOrder;
 
-    public Order(Client client, Courier courier, Restaurant restaurant, Map<Dish, Integer> orderedDishes) {
+    public Order(Client client, Courier courier, Restaurant restaurant, TreeMap<Dish, Integer> orderedDishes) {
         this.client = client;
         this.courier = courier;
         this.restaurant = restaurant;
@@ -47,7 +47,7 @@ public class Order {
         return orderedDishes;
     }
 
-    public void setOrderedDishes(Map<Dish, Integer> orderedDishes) {
+    public void setOrderedDishes(TreeMap<Dish, Integer> orderedDishes) {
         this.orderedDishes = orderedDishes;
     }
 

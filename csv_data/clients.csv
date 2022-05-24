@@ -1,7 +1,7 @@
-username,emailAddress,street,city,county,country,buildingID,streetNumber,floorNumber,apartmentNumber,phoneNumber
-roxanaenasoaie,roxanaenasoaie@gmail.com,Doamnei,Bucuresti,Bucuresti,Romania,B,20,4,16,+40755227740
-andreipopescu,apopescu@yahoo.com,IC Bratianu,Bucuresti,Bucuresti,Romania,H4,3,3,42,+40723456111
-elenagherghescu_, egherg@gmail.com,Washington,Bucuresti,Bucuresti,Romania,BA,5,7,55,+407674528765
-ionutgherghescu,ionut_g23@gmail.com,Washington,Bucuresti,Bucuresti,Romania,BA,5,7,55,+40787654376
-vladandrei,vlad_andrei21@gmail.com,Magheru,Bucuresti,Bucuresti,Romania,ZE,10,9,80,+40722321476
-anastasiasoare,soare_anastasia@yahoo.com,Roman-Voda,Bucuresti,Bucuresti,Romania,C,12,1,2,+40723987002
+username,emailAddress,addressID,phoneNumber
+roxanaenasoaie,roxanaenasoaie@gmail.com,1,+40755227740
+andreipopescu,apopescu@yahoo.com,5,+40723456111
+elenagherghescu_, egherg@gmail.com,4,+407674528765
+ionutgherghescu,ionut_g23@gmail.com,4,+40787654376
+vladandrei,vlad_andrei21@gmail.com,6,+40722321476
+anastasiasoare,soare_anastasia@yahoo.com,3,+40723987002

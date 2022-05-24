@@ -1,6 +1,6 @@
-package Application;
+package application;
 
-import Components.*;
+import components.*;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -10,6 +10,8 @@ public class Service {
     private List<Courier> couriers = new ArrayList<Courier>();
     private List<Restaurant> restaurants = new ArrayList<Restaurant>();
     private List<Order> orders = new ArrayList<Order>();
+    private List<Address> addresses = new ArrayList<Address>();
+    private List<Dish> dishes = new ArrayList<Dish>();
 
     private final ReadServices readServices = new ReadServices();
 
@@ -66,9 +68,11 @@ public class Service {
         restaurants.add(restaurant);
     }
     public void showRestaurants(){
-        for(var restaurant : restaurants){
-            System.out.println(restaurant.toString());
-        }
+//        for(var restaurant : restaurants){
+//            System.out.println(restaurant.toString());
+//        }
+
+//        restaurantRepository.findAll().forEach(Sout);
     }
 
     public void addOrder(Order order){
@@ -80,6 +84,25 @@ public class Service {
         }
     }
 
+    public void addAddress(Address address)
+    {
+//        addresses.add(address);
+
+//        adressesRepository.save(address);
+    }
+
+    public void showAddresses(){
+        for(var address : addresses){
+            System.out.println(address.toString());
+        }
+    }
+
+    public void addDish(Dish dish){dishes.add(dish);}
+    public void showDishes(){
+        for(var dish : dishes){
+            System.out.println(dish.toString());
+        }
+    }
 //    1. Compute the salary of a courier
     public Float computeSalary(Courier courier){
         return courier.getWorkedHours()*courier.getEurPerHour();
