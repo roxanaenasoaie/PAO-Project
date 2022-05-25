@@ -10,6 +10,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//create table couriers(
+//        id int,
+//        username varchar(50),
+//        emailAddress varchar(100),
+//        workedHours float,
+//        payPerHout float);
+
 public class CouriersRepository implements CRUDRepository<Courier> {
 
     private Connection connection;
@@ -34,6 +41,7 @@ public class CouriersRepository implements CRUDRepository<Courier> {
             preparedStatement.setFloat(4, courier.getWorkedHours());
             preparedStatement.setFloat(5, courier.getEurPerHour());
             preparedStatement.executeUpdate();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,6 +60,7 @@ public class CouriersRepository implements CRUDRepository<Courier> {
                 Float workedHours = resultSet.getFloat(4);
                 Float pay = resultSet.getFloat(5);
                 couriers.add(new Courier(username, email, workedHours, pay));
+                connection.close();
             }
 
         } catch (SQLException e) {

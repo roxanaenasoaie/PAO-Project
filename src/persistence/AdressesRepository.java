@@ -9,6 +9,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//create table addresses(
+//        id int,
+//        street varchar(50),
+//        city varchar(50),
+//        county varchar(50),
+//        country varchar(50),
+//        buildingID varchar(3),
+//        streetNumber int,
+//        floorNumber int,
+//        apartmentNumber int);
+
 public class AdressesRepository implements CRUDRepository<Address> {
 
     private Connection connection;
@@ -37,6 +48,7 @@ public class AdressesRepository implements CRUDRepository<Address> {
             preparedStatement.setInt(8, address.getFloorNumber());
             preparedStatement.setInt(9, address.getApartmentNumber());
             preparedStatement.executeUpdate();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -59,6 +71,7 @@ public class AdressesRepository implements CRUDRepository<Address> {
                 int floorNumber = resultSet.getInt("floorNumber");
                 int apartmentNumber = resultSet.getInt("apartmentNumber");
                 addresses.add(new Address(id, street, city, county, country, buildingID, streetNumber, floorNumber, apartmentNumber));
+                connection.close();
             }
 
         } catch (SQLException e) {

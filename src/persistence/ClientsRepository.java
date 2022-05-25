@@ -10,6 +10,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//create table clients(
+//        id int,
+//        username varchar(50),
+//        emailAddress varchar(100),
+//        addressID int,
+//        phoneNumber varchar(15));
+
 public class ClientsRepository implements CRUDRepository<Client> {
 
     private Connection connection;
@@ -34,6 +41,7 @@ public class ClientsRepository implements CRUDRepository<Client> {
             preparedStatement.setInt(4, client.getDeliveryAddressID());
             preparedStatement.setString(5, client.getPhoneNumber());
             preparedStatement.executeUpdate();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,6 +60,7 @@ public class ClientsRepository implements CRUDRepository<Client> {
                 Integer addressID = resultSet.getInt(4);
                 String phone = resultSet.getString(5);
                 clients.add(new Client(username, email, addressID, phone));
+                connection.close();
             }
 
         } catch (SQLException e) {

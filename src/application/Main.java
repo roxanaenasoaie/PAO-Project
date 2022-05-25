@@ -32,25 +32,25 @@ public class Main {
             services.addAddress(addr);
         }
 
-        dataClients = ReadFromCsv.read("csv_data/clients.csv");
+        dataClients = readFromCsv.read("csv_data/clients.csv");
         for(String[] data : dataClients){
             Client clnt = new Client(data[1], data[2], parseInt(data[3]), data[4]);
             services.addClient(clnt);
         }
 
-        dataCouriers = ReadFromCsv.read("csv_data/couriers.csv");
+        dataCouriers = readFromCsv.read("csv_data/couriers.csv");
         for(String[] data : dataCouriers){
             Courier crr = new Courier(data[1], data[2], parseFloat(data[3]), parseFloat(data[4]));
             services.addCourier(crr);
         }
 
-        dataDishes = ReadFromCsv.read("csv_data/dishes.csv");
+        dataDishes = readFromCsv.read("csv_data/dishes.csv");
         for(String[] data : dataDishes){
             System.out.println(data[3]);
             //Dish dsh = new Dish(data[0], parseFloat(data[1]), parseFloat(data[2]), data[3]);
         }
 
-        dataRestaurants = ReadFromCsv.read("csv_data/restaurants.csv");
+        dataRestaurants = readFromCsv.read("csv_data/restaurants.csv");
         for(String[] data : dataRestaurants){
             Restaurant rst = new Restaurant(data[1], data[2], parseInt(data[3]), data[4], data[5], parseLong(data[6]));
             services.addRestaurant(rst);

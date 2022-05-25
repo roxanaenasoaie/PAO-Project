@@ -19,7 +19,7 @@ public class ReadFromCsv {
         return instance;
     }
 
-    public static List<String[]> read(String filename) throws IOException {
+    public List<String[]> read(String filename) throws IOException {
         String line = "";
         String splitBy = ",";
         String[] data = new String[0];

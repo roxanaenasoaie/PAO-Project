@@ -9,6 +9,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//create table restaurants(
+//        id int,
+//        username varchar(50),
+//        emailAddress varchar(100),
+//        addressID int,
+//        phoneNumber varchar(15),
+//        cuisine varchar(50),
+//        waitingTime long);
+
 public class RestaurantsRepository implements CRUDRepository<Restaurant> {
 
     private Connection connection;
@@ -35,6 +44,7 @@ public class RestaurantsRepository implements CRUDRepository<Restaurant> {
             preparedStatement.setString(6, restaurant.getTypeOfCuisine());
             preparedStatement.setLong(7, restaurant.getWaitingTime());
             preparedStatement.executeUpdate();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -55,6 +65,7 @@ public class RestaurantsRepository implements CRUDRepository<Restaurant> {
                 String cuisine = resultSet.getString(6);
                 Long waitingTime = resultSet.getLong(7);
                 couriers.add(new Restaurant(username, email, address, phone, cuisine, waitingTime));
+                connection.close();
             }
 
         } catch (SQLException e) {
